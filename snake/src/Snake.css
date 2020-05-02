@@ -37,16 +37,47 @@
   }
 }
 
-.Snake {
-  height: 100px;
-  width: 100px;
-  margin: auto;
-  background:blue;
-}
 
 .Game {
+  display: block;
+  margin: auto;
+  margin-top: 2em;
+  background: gray;
+  height: 50em;
+  width: 70%;
+}
+
+.Snake {
+  top: 0; left: 0;
+  margin: auto;
+  margin-top: 5em;
+  width: 80%;
+  height: 60%;
+  background: black;
+}  
+
+.Buttons {
   display: flex;
-  color: blue;
 }
 
 
+.leftButtonGroup {
+  width: 50%;
+}
+
+.rightButtonGroup {
+  height: 50%;
+  width: 50%;
+}
+
+#rightButtonGroup {
+  width: 50%;
+  height: 50%;
+}
+
+@media only screen and (max-width: 768px) {
+  .Game {
+    margin: 0;
+    width: 100%
+  }
+}
