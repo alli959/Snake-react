@@ -38,13 +38,14 @@ function Snake() {
     }
 
     const rightClick = () => {
-      
+      console.log("rightClick");
     }
     const upClick = () => {
+      console.log("upClick");
       
     }
     const downClick = () => {
-      
+      console.log("downclick");
     }
 
 
@@ -64,12 +65,16 @@ function Snake() {
       <div className = "Buttons">
       
         <div className = "leftButtonGroup">
-        <img id = "leftButtonGroup" onClick = {upClick} src = {controller} alt = "up"></img>
-          
-          <div className = "verticalButtons">
-          </div>
+        <img className = "movement" src = {controller} alt = "controller" style = {{width: "70%",heigth:"60%"}} useMap="#movement"></img>
 
-        </div>
+        <map name = "movement">
+          <area name = "leftClick" shape = "poly" coords="38,75,0,75,0,45,36,45,51,60" onClick = {leftClick} alt="Sun"></area>
+          <area name = "rightClick" shape = "poly" coords="81,75,120,75,120,44,81,45,68,59" onClick = {rightClick} alt="Sun"></area>
+          <area name = "upClick" shape = "poly" coords="75,37,75,0,45,0,45,35,60,53" onClick = {upClick} alt="Sun"></area>
+          <area name = "downClick" shape = "poly" coords="46,81,45,120,75,120,74,81,59,69" onClick = {downClick} alt="Sun"></area>
+        </map>
+          
+      </div>
         
         <div className = "rightButtonGroup">
           

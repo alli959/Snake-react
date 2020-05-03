@@ -28,43 +28,48 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
 
 
 .Game {
+  position: absolute;
   display: block;
   margin: auto;
   margin-top: 2em;
   background: gray;
-  height: 50em;
-  width: 70%;
+  height: 600px;
+  width: 360px;
 }
 
 .Snake {
+  position: relative;
   top: 0; left: 0;
   margin: auto;
-  margin-top: 5em;
   width: 80%;
-  height: 60%;
+  height: 50%;
   background: black;
 }  
 
 .Buttons {
+  position: relative;
+  height: 50%;
   display: flex;
 }
 
 
 .leftButtonGroup {
+  position: relative;
   width: 50%;
+  height: 50%;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 1em;
+
 }
 
+.movement {
+  position: relative;
+}
 .rightButtonGroup {
   height: 50%;
   width: 50%;
@@ -74,6 +79,7 @@
   width: 50%;
   height: 50%;
 }
+
 
 @media only screen and (max-width: 768px) {
   .Game {
