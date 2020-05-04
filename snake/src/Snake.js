@@ -45,7 +45,7 @@ function Snake() {
       
     }
     const downClick = () => {
-      console.log("downclick");
+      console.log("downclickk");
     }
 
 
