@@ -35,13 +35,15 @@
   position: absolute;
   display: block;
   margin: auto;
-  margin-top: 2em;
+  padding-top: 2em;
   background: gray;
-  height: 600px;
+  height: 100%;
+  max-height: 600px;
   width: 360px;
 }
 
 .Snake {
+  margin-top: 2em;
   position: relative;
   top: 0; left: 0;
   margin: auto;
@@ -78,12 +80,4 @@
 #rightButtonGroup {
   width: 50%;
   height: 50%;
-}
-
-
-@media only screen and (max-width: 768px) {
-  .Game {
-    margin: 0;
-    width: 100%
-  }
 }

@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Snake from './Snake';
+import Game from './Game';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-    <Snake />,
+    <Game />,
   document.getElementById('root')
 );
 
