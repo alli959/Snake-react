@@ -3,6 +3,8 @@ import './Game.css';
 import leftImg from './png/left.png'
 import controller from './png/controller.png'
 import Snake from './Snake.js'
+import Food from './Food.js'
+import {withRouter } from 'react-router-dom'
 
 
 
@@ -23,6 +25,10 @@ function Game() {
     snakeSpeed: 1000,
     }
   );
+
+  let [food, setFood] = useState([Math.floor(Math.random() * 99),Math.floor(Math.random() * 99)])
+
+
 
   
 
@@ -69,26 +75,44 @@ function Game() {
       let position = tempSnake.snakePos;
       let endIndex = position.length-1
       let end = position[endIndex];
+      let Food = food;
 
 
         if(right) {
           let x = end[0] + 2
           let y = end[1]
+          if(Food[1] === y){
+            if(Food[0] === x){
+              console.log("collision");
+            }
+          }
+          if(x >= 100) {
+            x = x - 100;
+          }
           position[endIndex] = [x,y]
         }
         if(left) {
           let x = end[0] -2
           let y = end[1]
+          if(x < 0) {
+            x = x + 100 
+          }
           position[endIndex] = [x,y]
         }
         if(down) {
           let x = end[0]
           let y = end[1] + 2
+          if(y >= 100){
+            y = y - 100;
+          }
           position[endIndex] = [x,y]
         }
         if(up) {
           let x = end[0]
           let y = end[1] -2
+          if(y < 0){
+            y = y + 100;
+          }
           position[endIndex] = [x,y]
         }
         
@@ -109,7 +133,7 @@ function Game() {
       let position = tempSnake.snakePos;
       let endIndex = position.length-1
       let end = position[endIndex];
-      let timer = setTimeout(moveSnake,100,tempSnake,position,endIndex,end);
+      let timer = setTimeout(moveSnake,50,tempSnake,position,endIndex,end);
       return () => clearTimeout(timer);
     },[moveSnake,snake])
 
@@ -126,6 +150,7 @@ function Game() {
     <div className="Game">
       <div className = "Snake">
         < Snake position = {snake.snakePos}/>
+        < Food left = {food[0]} top = {food[1]} />
       </div>
       <div className = "Buttons">
       
@@ -150,4 +175,4 @@ function Game() {
   );
 }
 
-export default Game;
+export default withRouter(Game);

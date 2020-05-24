@@ -3,9 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Game from './Game';
 import * as serviceWorker from './serviceWorker';
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
-    <Game />,
+    <BrowserRouter>
+      <Game />
+    </BrowserRouter>,
   document.getElementById('root')
 );
 
